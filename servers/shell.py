@@ -14,7 +14,7 @@ def shell(ns_cap):
     fs = (yield from call(ns_cap, {"op": "LOOKUP", "name": "fs"}))["service"]
     con = (yield from call(ns_cap, {"op": "LOOKUP", "name": "console"}))["service"]
 
-    yield from call(con, {"op": "WRITE", "text": "ThreadSnakeOS shell. commands: ls, read <path>, write <path> <text>, exit"})
+    yield from call(con, {"op": "WRITE", "text": "ThreadSnakeOS shell. commands: ls, read <path>, write <path> <text>, , trace <on/off>, exit"})
 
     while True:
         line = input("tsos> ").strip()   # <-- real terminal I/O, not simulated

@@ -32,7 +32,7 @@ class Kernel:
         )
 
     def terminate(self, task, status=0):
-        task.stats = TaskState.ZOMBIE
+        task.state = TaskState.ZOMBIE
         task.exit_status = status
         self.scheduler.remove(task)
         self.blocked.discard(task.tid)

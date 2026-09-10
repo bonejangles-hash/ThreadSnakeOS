@@ -3,7 +3,7 @@ from servers.nameserver import name_server
 from servers.init import init
 
 
-def boot(trace=True):
+def boot(trace=False):
     kernel = Kernel(trace=trace)
 
     ns_task = kernel.create_task(name_server(), "nameserver")
